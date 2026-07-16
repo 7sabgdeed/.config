@@ -37,14 +37,15 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "ghostty"
-local fileManager = "nemo"
+local fileManager = "nautilus"
 local menu        = "hyprlauncher"
 local browser = "brave"
 local syncThing = "syncthing >/dev/null 2>&1 & disown"
 local syncThing_browser = browser .. " --app=http://127.0.0.1:8384/"
 local launcher = "rofi -show drun -show-icons"
 local command_runner = "rofi -show run"
-local hibernate = "systemctl hibernate"
+-- local hibernate = "systemctl hibernate"
+local lock_then_hibernate = "~/.config/hypr/hibernate.sh"
 local hyprshot = "hyprshot -m region -o ~/Pictures/screenshots"
 local hyprlock = "hyprlock"
 
@@ -285,7 +286,7 @@ local PRTSC_key = "PRINT"
 
 hl.bind(win_shift .. " + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 local closeWindowBind = hl.bind(win .. " + C", hl.dsp.window.close())
-hl.bind(ctrl_alt_shift .. " + H", hl.dsp.exec_cmd(hibernate))
+hl.bind(ctrl_alt_shift .. " + H", hl.dsp.exec_cmd(lock_then_hibernate))
 hl.bind(win .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(win.. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(win .. " + B", hl.dsp.exec_cmd(browser))
