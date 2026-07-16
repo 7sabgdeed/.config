@@ -1,0 +1,87 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "network",
+    "disk#root",
+    "disk#home",
+    "cpu",
+    "memory",
+    "tray",
+    "hyprland/language",
+    "group/volume",
+  ],
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "sort-by-number": true,
+    // "persistent-workspaces": {
+    //   "*": 5
+    // }
+  },
+  "clock": {
+    "format": "{:%a, %d %b %I:%M %p}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "🌐",
+    "format-disconnected": "󰤭",
+    "on-click": "exec nmrs"
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ar": "AR",
+    "tooltip": false,
+    "on-click": "hyprctl switchxkblayout all next",
+  },
+  "cpu": {
+    "format": " {}%",
+    "on-click": "exec ghostty --title=btop -e btop"
+  },
+  "memory": {
+    "format": " {percentage}%",
+    "tooltip-format": "{used:0.1f}G/{total:0.1f}G",
+    "on-click": "exec ghostty --title=btop -e btop"
+  },
+  "disk#root": {
+    "path": "/",
+    "format": "󰋊 / {percentage_used}%"
+  },
+  "disk#home": {
+    "path": "/home",
+    "format": "󰋊  {percentage_used}%"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  "group/volume": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  }
+}
