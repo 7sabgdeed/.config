@@ -48,8 +48,7 @@ local command_runner = "rofi -show run"
 local lock_then_hibernate = "~/.config/hypr/hibernate.sh"
 local hyprshot = "hyprshot -m region -o ~/Pictures/screenshots"
 local hyprlock = "hyprlock"
-local rofi_emoji = "rofi -modi emoji -show emoji"
-
+local rofimoji = "rofimoji --action copy"
 
 
 -------------------
@@ -297,7 +296,7 @@ hl.bind(win .. " + R", hl.dsp.exec_cmd(launcher))
 hl.bind(ctrl_shift   .. " + R", hl.dsp.exec_cmd(command_runner))
 hl.bind(PRTSC_key, hl.dsp.exec_cmd(hyprshot))
 hl.bind("Scroll_Lock", hl.dsp.exec_cmd(hyprlock))
-hl.bind(win_dot, hl.dsp.exec_cmd(rofi_emoji))
+hl.bind(win_dot, hl.dsp.exec_cmd(rofimoji))
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 -- closeWindowBind:set_enabled(false)
