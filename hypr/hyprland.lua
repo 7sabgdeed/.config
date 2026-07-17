@@ -105,10 +105,10 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in  = 2,
-        gaps_out = 10,
+        gaps_in  = 0,
+        gaps_out = 0,
 
-        border_size = 3,
+        border_size = 0,
 
         col = {
             active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
@@ -116,7 +116,7 @@ hl.config({
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false,
+        resize_on_border = true,
 
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
@@ -125,7 +125,7 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 10,
+        rounding       = 0,
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
